@@ -1,6 +1,7 @@
 { lib
 , cacert
 , fetchFromGitHub
+, fetchpatch
 , python3Packages
 }:
 
@@ -18,7 +19,10 @@ let chia = python3Packages.buildPythonApplication rec {
 
   patches = [
     # chia tries to put lock files in the python modules directory
-    ./dont_lock_in_store.patch
+    (fetchpatch {
+    url ="https://github.com/Chia-Network/chia-blockchain/commit/3565c41b7f4e2e2a87863e3e7da357706caa38c3.patch";
+    hash = "sha256-X1ykmb1DliIBmo91BwqsmdO+hLd5jYf6AOXf/eF1ZvU=";
+    })
   ];
 
   postPatch = ''
