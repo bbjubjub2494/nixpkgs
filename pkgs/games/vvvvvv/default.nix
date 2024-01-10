@@ -18,13 +18,13 @@
 
 stdenv.mkDerivation rec {
   pname = "vvvvvv";
-  version = "2.3.6";
+  version = "2.4";
 
   src = fetchFromGitHub {
     owner = "TerryCavanagh";
     repo = "VVVVVV";
     rev = version;
-    sha256 = "sha256-sLNO4vkmlirsqJmCV9YWpyNnIiigU1KMls7rOgWgSmQ=";
+    sha256 = "sha256-/V0QwzA7qYElN3ag1Pv9Pv/jk4HHu2f7uUKBBeYAUmo=";
   };
   sourceRoot = "${src.name}/desktop_version";
   dataZip = fetchurl {
